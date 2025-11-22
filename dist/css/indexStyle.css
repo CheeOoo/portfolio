@@ -1,0 +1,31 @@
+* {
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: #111111;
+}
+
+.txt {
+    line-height: 130%;
+}
+
+.grid-layout {
+    column-gap: .75rem;
+    row-gap: .75rem;
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-gap {
+    column-gap: .75rem;
+    row-gap: .75rem;
+}
+
+.caption {
+    font-size: 0.725rem;
+    text-transform: uppercase;
+}

@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'NeueHaasUnica';
+    src: url('../dist/font/NeueHaasUnica-Medium.woff2') format('woff2'),
+         url('../dist/font/NeueHaasUnica-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'InputMono';
+    src: url('../dist/font/InputMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
