@@ -4,55 +4,215 @@
     "Caption": "Ree Park",
     "Location": "Ebeltoft",
     "Year": "2023",
-    "Column": "1"
+    "Column": "1",
+    "Tag": "Animal"
   },
   {
     "Url": "https://lh3.googleusercontent.com/pw/AP1GczMQmk0PWL37b7MXKfOwMfJuGi1szkNwwjJOM3zRxf6Xeo7zGAJNZLG2Mljqkd4UyhDnrQWfQNsGhK7s2560RhEM_UCv88ymPpjxlgLUZ0JLvBBPu9d6dSg8F9NAj-x57ftOT26BzhZcdMXwyzftGuplsg=w1487-h991-s-no-gm?authuser=0",
     "Caption": "Ree Park",
     "Location": "Ebeltoft",
     "Year": "2023",
-    "Column": "1"
+    "Column": "1",
+    "Tag": "Animal"
   },
   {
     "Url": "https://img.playbook.com/IT5bzgFkt-quuA1LmN3fpmhgEL1Oh8mqqlfiE43L9rE/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljL2VmNTU2NDhl/LTdiNTEtNGNkNi1h/NGI4LTlmMmY2NTI5/YTUzYg",
     "Caption": "US Car Camp",
     "Location": "Øster Hurup",
     "Year": "2022",
-    "Column": "1"
+    "Column": "1",
+    "Tag": "Car"
   },
   {
     "Url": "https://img.playbook.com/78P2FiYakYZuFZ1XcPjbHGac8eDUY9MItKIZG84Ut-M/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljL2FiOWQ2ODIw/LTNlMDEtNGI1Ny04/ZjliLTZhNzY1NGU2/MjczNA",
     "Caption": "US Car Camp",
     "Location": "Øster Hurup",
     "Year": "2022",
-    "Column": "2"
+    "Column": "2",
+    "Tag": "Car"
   },
   {
     "Url": "https://lh3.googleusercontent.com/pw/AP1GczNkkFBfx4zUzzmS9YLTrV_a4rL-mwbHXFFw4jm1Zn-AcTnYSWv6WBWJtQHx2dtiiyasdccYbkwCenfXlrLOdhmsfm1H1lLdIwu1KRD8yqnJBkMvcBeX-xcnNo5qe6OTr2d70cFy49uv9e1j-L7Op74Zew=w1487-h991-s-no-gm?authuser=0",
     "Caption": "Ree Park",
     "Location": "Ebeltoft",
     "Year": "2023",
-    "Column": "2"
+    "Column": "2",
+    "Tag": "Animal"
   },
   {
     "Url": "https://img.playbook.com/1xk1NtKtkLHhW3ofLSVRgnxyh_hsepOgUMntDBQktxc/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzAzNzM0M2Rl/LTEzMDYtNDZiZi1h/NjAyLTA4OWFkNmY3/YWQxMA",
     "Caption": "US Car Camp",
     "Location": "Øster Hurup",
     "Year": "2022",
-    "Column": "3"
+    "Column": "3",
+    "Tag": "Car"
   },
   {
     "Url": "https://lh3.googleusercontent.com/pw/AP1GczNVEMLqi08pK-NwePDxucYO3gNoqHgqeji8oopmuHIS27WTewxu7XTfuB6jSKW6RUSN8hTQ7WaFu5UT4G_exBKafvvt3Iw_MDzLZwa6noKNFDe2m0sGf4LUzFTYftPE5bReLD3FUafM3Ec-aUB1FMZ2-g=w1487-h991-s-no-gm?authuser=0",
     "Caption": "Ree Park",
     "Location": "Ebeltoft",
     "Year": "2023",
-    "Column": "3"
+    "Column": "3",
+    "Tag": "Animal"
   },
   {
     "Url": "https://img.playbook.com/P9Vxg_cVAuSR_kfeJphQWGA3slCQ6sstl0chfNpmxkU/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzAwZTRkNDVh/LWM5MzAtNDJjYy04/OWRkLWRkZGEwNWNl/MDBkMw",
     "Caption": "The Blue Planet",
     "Location": "Kastrup",
     "Year": "2023",
-    "Column": "3"
+    "Column": "3",
+    "Tag": "Animal"
+  },
+  {
+    "Url": "https://img.playbook.com/LKg-0nQOPoLUfuFMLKF-H3zmKV28oZ_k4nvSCcQnUAY/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzk1MGNkMjY0/LTIyNDktNDU1OC1i/MTgzLWEyNmZhMGUx/NTc5Zg",
+    "Caption": "Ree Park",
+    "Location": "Ebeltoft",
+    "Year": "2023",
+    "Column": "2",
+    "Tag": "Animal"
+  },
+  {
+    "Url": "https://img.playbook.com/nHCE3zyKUo30Cp9A6DPfgwfMYC3ZjMhB6BQn4FhVkME/w:1200/aHR0cHM6Ly9wcm9k/LnBsYXlib29rYXNz/ZXRzLmNvbS92MC8w/L3Byb2QvbGFyZ2Vf/cHJldmlld3MvY2Q1/ODkyMWEtYjg1Yi00/MjBkLWIyYWEtMWE5/MjNmNGIwMzgyP3R0/bD1ob3VybHkmdmVy/aWZ5PTE3NjM5NDIz/OTktaHJOazJWVTI2/RFF0OVQya2M2NVBP/Qmg0NjRJJTJGZmhX/TmxwJTJGVm83dFJG/RHclM0Q.webp",
+    "Caption": "Ree Park",
+    "Location": "Ebeltoft",
+    "Year": "2023",
+    "Column": "1",
+    "Tag": "Animal"
+  },
+  {
+    "Url": "https://img.playbook.com/A5143lTKMYC3aY4V05YLlhhLCKUGGo1eTVj9rCrRQ5k/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzc3YTI3MjBj/LWRjZGItNGFiMy1h/ODI1LWE3NTUyNmQ3/MzZiYw",
+    "Caption": "US Car Camp",
+    "Location": "Øster Hurup",
+    "Year": "2022",
+    "Column": "1",
+    "Tag": "Car"
+  },
+  {
+    "Url": "https://img.playbook.com/Y9KiawNbNNQN3Lh5wJU9h5UrJGqBP4mgPr57DRhXxGY/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzk2YmExOThj/LTdjYzUtNDZlNC05/NDU2LTExOTVkYmI1/OTdjOA",
+    "Caption": "US Car Camp",
+    "Location": "Øster Hurup",
+    "Year": "2022",
+    "Column": "2",
+    "Tag": "Car"
+  },
+  {
+    "Url": "https://img.playbook.com/V_huf7y_I-5d9gL7ByyQdq3IjdF-GPaKSdGgZ9sex_A/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzM4ZmRmNWUx/LWE4YTYtNDFkMS04/ZmFjLTRjZGYxMzhl/MDliYQ",
+    "Caption": "Model: Victor Søby",
+    "Location": "",
+    "Year": "2024",
+    "Column": "2",
+    "Tag": "Portrait"
+  },
+  {
+    "Url": "https://img.playbook.com/aRqJOtXpSgxZzIb_1EeIeb6G0C8hO9ZsMhiRJEAG20o/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzBhMmIxNjc3/LTQ4YWYtNDBhMy1i/ZDk4LWM2NzgzMzVk/MTkyMg",
+    "Caption": "Model: Victor Søby",
+    "Location": "",
+    "Year": "2023",
+    "Column": "1",
+    "Tag": "Portrait"
+  },
+  {
+    "Url": "https://img.playbook.com/jvOiQ8OOyPVxYERP4rqxBA4QArL2PwxawrcEq8FifhQ/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzBjYTJjYWIz/LWIwYmUtNDgyMy04/OTA2LTg3YjczZWQx/NGFkNg",
+    "Caption": "Model: Victor Søby",
+    "Location": "",
+    "Year": "2023",
+    "Column": "3",
+    "Tag": "Portrait"
+  },
+  {
+    "Url": "https://img.playbook.com/5u-DHzB-b94reSPtX0K7JLBLXX4OkZ4r65crq7DTj-8/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzk4MGEwZGRl/LTM2MGUtNGRiYS05/OWJlLTYyMGNiZjdl/NmEwNw",
+    "Caption": "House Sparrow",
+    "Location": "",
+    "Year": "2024",
+    "Column": "2",
+    "Tag": "Animal"
+  },
+  {
+    "Url": "https://img.playbook.com/RsurS61pIwLwY5o-8WNrirS90l_RDu5BIi_cZAX5hzM/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzhkNDQ3NmVi/LWM5NmEtNDEzNS1h/YWUxLTZlZTM3YzBh/YzlkOQ",
+    "Caption": "Ree Park",
+    "Location": "Ebeltoft",
+    "Year": "2023",
+    "Column": "3",
+    "Tag": "Animal"
+  },
+  {
+    "Url": "https://img.playbook.com/NkCnh8bXrjGWvZnxhT6vQd8NteFqYPKhAj4DoNrEUiA/w:500/aHR0cHM6Ly9wcm9k/LnBsYXlib29rYXNz/ZXRzLmNvbS92MC8w/L3Byb2QvcHJldmll/d3MvOWQ4ZTEzMjAt/ZmY0ZS00MDcyLWFj/NmEtYmU3ZTYwMzRm/NjlkP3R0bD1ob3Vy/bHkmdmVyaWZ5PTE3/NjQxMDc5OTktNHdB/cnFqZ2dmRXllZEQ1/VlhQYjB4T3FadUpW/Y0JTbVBUJTJCYyUy/QmNsMDVCeTglM0Q.webp",
+    "Caption": "Cathedral",
+    "Location": "Ribe",
+    "Year": "2024",
+    "Column": "3",
+    "Tag": "Urban"
+  },
+  {
+    "Url": "https://img.playbook.com/fboqD1BGWJdAm6JbstyAjaT1g_aoWE3UEOT7MX06Vc0/w:1800/aHR0cHM6Ly9wcm9k/LnBsYXlib29rYXNz/ZXRzLmNvbS92MC8w/L3Byb2QvbGFyZ2Vf/cHJldmlld3MvYWU1/MzA2ZGQtMTY1NS00/YTc2LTg3NTktMDRm/MWQxMGUwODUzP3R0/bD1ob3VybHkmdmVy/aWZ5PTE3NjQxMDc5/OTktbXBwaUxQZEdN/dFRPWnpJazdrSURT/bEtIeHBOWSUyRmps/dXNDRjIlMkJETjBz/TUUlM0Q.webp",
+    "Caption": "Swan",
+    "Location": "Ribe",
+    "Year": "2024",
+    "Column": "1",
+    "Tag": "Animal"
+  },
+  {
+    "Url": "https://img.playbook.com/2ITI-GwPBVZMqa-DDdJWyJnvCUsb__9dwOxHklv6vXc/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzkwMDJlMTdk/LTFjOGUtNGRjNy04/YjkzLTQxMjc4NmU4/NjVmOQ",
+    "Caption": "US Car Camp",
+    "Location": "Øster Hurup",
+    "Year": "2022",
+    "Column": "2",
+    "Tag": "Car"
+  },
+  {
+    "Url": "https://img.playbook.com/T9DbcJjzM1yYOrjaPWK_Mhxh8IcAqiV4Z5kBQS4wwJU/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzFiYzhhMTAz/LTU5MDktNGRlNi1i/NmI4LWU1MmE5Mjk0/ZjgyNA",
+    "Caption": "The Blue Planet",
+    "Location": "Kastrup",
+    "Year": "2023",
+    "Column": "1",
+    "Tag": "Animal"
+  },
+  {
+    "Url": "https://img.playbook.com/lkZ02dTqyZUdCDkEkCEUFpWwQ9DflvVE2GKJTAWq7yg/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzA5YjVmN2U0/LTgxZDAtNDA2Ny1h/YzE3LWEwNDRkNWJl/ZWI1MA",
+    "Caption": "Ree Park",
+    "Location": "Ebeltoft",
+    "Year": "2023",
+    "Column": "3",
+    "Tag": "Animal"
+  },
+  {
+    "Url": "https://img.playbook.com/FKK6DDIrYTuC-pxE5rr7fPCbLGq1wDacWx7UABXDA54/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzZiMTRhNmRj/LTRhYTUtNDg4ZS04/MDFkLTZkNmU4MTI2/ZmQxMQ",
+    "Caption": "Ree Park",
+    "Location": "Ebeltoft",
+    "Year": "2023",
+    "Column": "3",
+    "Tag": "Animal"
+  },
+  {
+    "Url": "https://img.playbook.com/8KYbENIG4L4r_2AgOAYoUqJJ-hBGkomuARI2ylfarFE/w:1800/aHR0cHM6Ly9wcm9k/LnBsYXlib29rYXNz/ZXRzLmNvbS92MC8w/L3Byb2QvbGFyZ2Vf/cHJldmlld3MvOTYw/NzZkMDgtM2UzNi00/OWY2LWIwZjgtZTQ2/MjQ1ZTE3MzYxP3R0/bD1ob3VybHkmdmVy/aWZ5PTE3NjQxMDc5/OTktcVY0OVVERjRM/MnY2VEclMkIxU0hs/VnVjQ3VtUUtWcTVN/YTBDdTU2M2pwNDlB/JTNE.webp",
+    "Caption": "Pythagoreio",
+    "Location": "Samos",
+    "Year": "2025",
+    "Column": "3",
+    "Tag": "Travel"
+  },
+  {
+    "Url": "https://img.playbook.com/MO09n7rNIrY0lyH3nRRSj7B6JNH7dLfH38UOYwBigeU/w:1800/aHR0cHM6Ly9wcm9k/LnBsYXlib29rYXNz/ZXRzLmNvbS92MC8w/L3Byb2QvbGFyZ2Vf/cHJldmlld3MvNWY0/ZDZiM2QtZTlmMS00/OGI3LWE3NzUtOWI0/MzE2Y2QzOTRmP3R0/bD1ob3VybHkmdmVy/aWZ5PTE3NjQxMDc5/OTktYU5KYVdrQ3ZU/SjF5OFY4TEtBaUhT/a1d6TDFFZmdMRVI4/TTRkQTBrelFlVSUz/RA.webp",
+    "Caption": "Pythagoreio",
+    "Location": "Samos",
+    "Year": "2025",
+    "Column": "2",
+    "Tag": "Travel"
+  },
+  {
+    "Url": "https://img.playbook.com/FM4LfJi7CbQW27XjboN6DjMyW1Pcr7Yeu9Q3SmCqDuY/w:1200/aHR0cHM6Ly9wcm9k/LnBsYXlib29rYXNz/ZXRzLmNvbS92MC8w/L3Byb2QvbGFyZ2Vf/cHJldmlld3MvZTdh/MDFjM2EtOGY1My00/YWUxLWI5Y2QtOWY3/OTJmZTA0NTEzP3R0/bD1ob3VybHkmdmVy/aWZ5PTE3NjM5NDIz/OTktNmplbUtDRXJn/QkxDTzJiMjh6R0Np/NWNVU2szemdRQkNK/a3VUUTFlSFB1dyUz/RA.webp",
+    "Caption": "Μύλοι",
+    "Location": "Samos",
+    "Year": "2025",
+    "Column": "1",
+    "Tag": "Travel"
+  },
+  {
+    "Url": "https://img.playbook.com/401j2VWd0kJoe470Pf85ppFVsYE4QjUB5ebYlwhcg1A/w:1800/aHR0cHM6Ly9wcm9k/LnBsYXlib29rYXNz/ZXRzLmNvbS92MC8w/L3Byb2QvbGFyZ2Vf/cHJldmlld3MvZjll/YjMwOGMtNmMwZi00/ZmZkLThiZmEtMDEz/Zjg0NmFmNjBkP3R0/bD1ob3VybHkmdmVy/aWZ5PTE3NjQxMDc5/OTktR1RnTUVTbnZo/MFBRanoxWm8lMkIl/MkJ2alBVN3cxdHZn/R3d2M0gxak9uQzFF/eTAlM0Q.webp",
+    "Caption": "Μύλοι",
+    "Location": "Samos",
+    "Year": "2025",
+    "Column": "3",
+    "Tag": "Travel"
   }
 ]
