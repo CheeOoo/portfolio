@@ -35,7 +35,10 @@
                                 in photography, coding, and music production. With a strong focus on photography, they
                                 capture compelling moments with a keen eye for detail. In addition, they design
                                 user-friendly websites and create dynamic music, consistently seeking to enhance their
-                                skills across these diverse fields.</h1>
+                                skills across these diverse fields.
+                                <br> <br>
+                                If you're interested in more of my work, you can find it <a href="photography.html"
+                                    style="color: rgb(147 167 155);">here</a>
                         </div>
                         <div class="grid grid-cols-6 col-start-1 col-end-13 gap-3 md:col-start-7">
                             <p class="text-white opacity-40 font-InputMono col-start-1 caption">Work</p>
@@ -51,7 +54,7 @@
                                 class="font-NeueHaas text-15 font-medium text-text-color col-span-2 col-start-1 col-end-3 txt">
                                 Graphic Designer</h1>
                             <p class="font-NeueHaas text-15 font-medium text-text-color col-span-4 col-start-3 txt">
-                                Creating visually compelling, purposeful designs, Their work blends 
+                                Creating visually compelling, purposeful designs, Their work blends
                                 creativity with clear messaging, consistently delivering
                                 polished, impactful results.</p>
                             <h1
@@ -80,35 +83,60 @@
 
                         <!-- COLUMN 3 -->
                         <div id="col-3" class="flex flex-col gap-6">
-                            
+
                         </div>
                     </div>
                 </section>
             </main>
         </div>
     </div>
-<script>
-    async function loadCards() {
-        const response = await fetch("photos.json");
-        const data = await response.json();
+    <div class="lightbox-overlay" id="lightbox">
+        <button class="lightbox-btn lightbox-close" id="lb-close">✕ Close</button>
+        <button class="lightbox-btn lightbox-download" id="lb-download">↓ Download</button>
+        <button class="lightbox-btn lightbox-prev" id="lb-prev">← Prev</button>
+        <button class="lightbox-btn lightbox-next" id="lb-next">Next →</button>
+        <img class="lightbox-img" id="lb-img" src="" alt="">
+        <div class="lightbox-spinner" id="lb-spinner"></div>
+        <div class="lightbox-caption">
+            <h1 id="lb-caption"></h1>
+            <p id="lb-location"></p>
+        </div>
+        <span class="lightbox-counter" id="lb-counter"></span>
+    </div>
 
-        // Loop through the data in reverse order
-        for (let i = data.length - 1; i >= 0; i--) {
-            const item = data[i];
+    <script>
+        let allImages = [];
+        let currentIndex = 0;
 
-            // Which column to place this card in
-            const column = document.getElementById(`col-${item.Column}`);
-            if (!column) continue; // safety check
+        function cloudinaryUrl(publicId, width = null) {
+            const transform = width ? `w_${width},f_auto,q_auto` : `f_auto,q_auto`;
+            return `https://res.cloudinary.com/dib9lpyjw/image/upload/q_auto/f_auto/${transform}/${publicId}`;
+        }
 
-            // Build the HTML card
-            const card = `
-                <a target="_blank" rel="noopener noreferrer"
+        function cloudinaryUrlWatermarked(publicId) {
+            return `https://res.cloudinary.com/dib9lpyjw/image/upload/l_sigwh_rhjv4w,w_1300,g_south_east,x_20,y_40,fl_layer_apply/f_auto,q_auto/${publicId}`;
+        }
+
+        async function loadCards() {
+            const response = await fetch("photos.json");
+            const data = await response.json();
+
+            for (let i = data.length - 1; i >= 0; i--) {
+                const item = data[i];
+                const column = document.getElementById(`col-${item.Column}`);
+                if (!column) continue;
+
+                const idx = allImages.length;
+                allImages.push(item);
+
+                const card = `
+                <a data-lightbox="${idx}"
                    class="cursor-pointer relative grid w-full opacity-100 select-none group">
                     <div class="relative game-border group-hover:opacity-80">
                         <div class="relative w-full overflow-hidden">
                             <article class="overflow-hidden relative w-full">
                                 <img loading="lazy" alt="${item.Caption} — ${item.Location}, ${item.Year}"
-                                     sizes="100vw" src="${item.Url}"
+                                     sizes="100vw" src="${cloudinaryUrl(item.Url, 800)}""
                                      style="width:100%; height:100%; object-fit:cover; object-position:center;">
                             </article>
                         </div>
@@ -120,18 +148,87 @@
                 </a>
             `;
 
-            // Add it
-            column.insertAdjacentHTML("beforeend", card);
-        }
-    }
+                column.insertAdjacentHTML("beforeend", card);
+            }
 
-    loadCards();
-</script>
+            bindLightboxClicks();
+        }
+
+        function openLightbox(index) {
+            currentIndex = index;
+            const item = allImages[currentIndex];
+
+            const img = document.getElementById("lb-img");
+            const spinner = document.getElementById("lb-spinner");
+
+            img.style.opacity = "0";
+            spinner.style.display = "block";
+
+            img.onload = () => {
+                img.style.opacity = "1";
+                spinner.style.display = "none";
+            };
+
+            img.src = cloudinaryUrlWatermarked(item.Url);
+            img.alt = item.Caption;
+            document.getElementById("lb-caption").textContent = item.Caption;
+            document.getElementById("lb-location").textContent = [item.Location, item.Year].filter(Boolean).join(", ");
+            document.getElementById("lb-counter").textContent = `${currentIndex + 1} / ${allImages.length}`;
+            document.getElementById("lightbox").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.remove("active");
+            document.getElementById("lb-img").src = "";
+            document.body.style.overflow = "";
+        }
+
+        function navigate(dir) {
+            currentIndex = (currentIndex + dir + allImages.length) % allImages.length;
+            openLightbox(currentIndex);
+        }
+
+        function downloadCurrent() {
+            const item = allImages[currentIndex];
+            const a = document.createElement("a");
+            a.href = cloudinaryUrl(item.Url);
+            a.download = item.Caption || "photo";
+            a.target = "_blank";
+            a.click();
+        }
+
+        function bindLightboxClicks() {
+            document.querySelectorAll("[data-lightbox]").forEach(el => {
+                el.addEventListener("click", e => {
+                    e.preventDefault();
+                    openLightbox(parseInt(el.dataset.lightbox));
+                });
+            });
+        }
+
+        document.getElementById("lb-close").addEventListener("click", closeLightbox);
+        document.getElementById("lb-prev").addEventListener("click", () => navigate(-1));
+        document.getElementById("lb-next").addEventListener("click", () => navigate(1));
+        document.getElementById("lb-download").addEventListener("click", downloadCurrent);
+
+        // Close on backdrop click
+        document.getElementById("lightbox").addEventListener("click", e => {
+            if (e.target === document.getElementById("lightbox")) closeLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener("keydown", e => {
+            const lb = document.getElementById("lightbox");
+            if (!lb.classList.contains("active")) return;
+            if (e.key === "ArrowLeft") navigate(-1);
+            if (e.key === "ArrowRight") navigate(1);
+            if (e.key === "Escape") closeLightbox();
+        });
+
+        loadCards();
+    </script>
 
 </body>
 
 </html>
-
-
-
-

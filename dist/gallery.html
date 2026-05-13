@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — CheeOoo's Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="../src/leaf-nature-forest-brand-plant_icon-icons.com_59259.png">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="./css/indexStyle.css">
+    <style>
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: .75rem;
+            row-gap: 0;
+        }
+
+        @media (max-width: 767px) {
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gallery-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .back-link {
+            font-family: "InputMono", UI-Mono;
+            font-size: 0.725rem;
+            text-transform: uppercase;
+            color: rgb(255 255 255 / 0.4);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: rgb(255 255 255 / 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w-full flex items-center flex-col">
+        <div class="margin max-w-8xl w-full">
+            <nav class="nav border-b-2 border-secondary-color grid-layout py-4">
+                <h1 class="font-NeueHaas text-15 font-medium text-text-color col-span-4 col-start-1 hover:text-violet-300 txt">
+                    <a href="index.html">Marcus Haugstrup</a>
+                </h1>
+                <h1 id="nav-tag" class="font-NeueHaas text-15 font-medium text-text-color col-span-6 md:col-start-7 lg:col-start-7 md:col-span-3 lg:col-span-2 txt">
+                    Gallery
+                </h1>
+                <h1 class="font-NeueHaas text-15 font-medium text-text-color col-span-3 lg:inline md:col-start-9 txt">
+                    Billund, Denmark
+                </h1>
+            </nav>
+
+            <main>
+                <section class="w-full grid grid-cols-12 grid-gap relative max-w-8xl">
+                    <section class="my-6 grid-layout">
+                        <div class="flex flex-col font-NeueHaas text-15 font-medium col-span-4 col-start-1 col-end-13 gap-3 md:col-end-5 txt">
+                            <p class="text-white opacity-40 font-InputMono caption">
+                                <a href="photography.html" class="back-link">← Back</a>
+                            </p>
+                            <h1 id="page-title" class="font-NeueHaas text-15 font-medium text-text-color col-start-1 col-end-13 mb-4 md:col-start-1 md:col-span-5 md:mb-0 txt">
+                                Loading...
+                            </h1>
+                        </div>
+                    </section>
+
+                    <div class="col-start-1 col-end-13">
+                        <div class="two-col-grid">
+                            <div id="col-1" class="gallery-col"></div>
+                            <div id="col-2" class="gallery-col"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        async function loadGallery() {
+            const params = new URLSearchParams(window.location.search);
+            const tag = params.get("tag") || "";
+
+            // Update page title and nav
+            document.getElementById("page-title").textContent = tag || "Gallery";
+            document.getElementById("nav-tag").textContent = tag || "Gallery";
+            document.title = `${tag} — CheeOoo's Portfolio`;
+
+            const response = await fetch("photos.json");
+            const data = await response.json();
+
+            // Filter to matching tag only
+            const filtered = data.filter(item => item.Tag === tag);
+
+            if (filtered.length === 0) {
+                document.getElementById("col-1").innerHTML =
+                    `<p class="font-InputMono caption text-zinc-500">No images found for "${tag}".</p>`;
+                return;
+            }
+
+            // Distribute into 2 columns, preserving reverse order
+            const col1 = document.getElementById("col-1");
+            const col2 = document.getElementById("col-2");
+
+            for (let i = filtered.length - 1; i >= 0; i--) {
+                const item = filtered[i];
+                const targetCol = i % 2 === 0 ? col1 : col2;
+
+                const locationYear = [item.Location, item.Year].filter(Boolean).join(", ");
+
+                const card = `
+                    <a target="_blank" rel="noopener noreferrer"
+                       class="cursor-pointer relative grid w-full opacity-100 select-none group">
+                        <div class="relative game-border group-hover:opacity-80">
+                            <div class="relative w-full overflow-hidden">
+                                <article class="overflow-hidden relative w-full">
+                                    <img loading="lazy" alt="${item.Caption} — ${item.Location}, ${item.Year}"
+                                         sizes="100vw" src="${item.Url}"
+                                         style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                                </article>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h1 class="font-InputMono caption text-zinc-50">${item.Caption}</h1>
+                            <p class="font-InputMono caption text-zinc-500">${locationYear}</p>
+                        </div>
+                    </a>
+                `;
+
+                targetCol.insertAdjacentHTML("beforeend", card);
+            }
+        }
+
+        loadGallery();
+    </script>
+</body>
+
+</html>

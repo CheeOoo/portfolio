@@ -29,3 +29,117 @@ body {
     font-size: 0.725rem;
     text-transform: uppercase;
 }
+
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    display: block;
+    user-select: none;
+}
+
+.lightbox-btn {
+    position: fixed;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "InputMono", UI-Mono;
+    font-size: 0.725rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 1rem;
+    transition: color 0.15s ease;
+    letter-spacing: 0.05em;
+}
+
+.lightbox-btn:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.lightbox-close {
+    top: 1rem;
+    right: 1rem;
+}
+
+.lightbox-download {
+    top: 1rem;
+    right: 5rem;
+}
+
+.lightbox-prev {
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-next {
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-caption {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    pointer-events: none;
+}
+
+.lightbox-caption h1 {
+    font-family: "InputMono", UI-Mono;
+    font-size: 0.725rem;
+    text-transform: uppercase;
+    color: rgba(250, 250, 250, 0.9);
+}
+
+.lightbox-caption p {
+    font-family: "InputMono", UI-Mono;
+    font-size: 0.725rem;
+    text-transform: uppercase;
+    color: rgba(113, 113, 122, 0.9);
+    margin-top: 0.25rem;
+}
+
+.lightbox-counter {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-family: "InputMono", UI-Mono;
+    font-size: 0.725rem;
+    text-transform: uppercase;
+    color: rgba(113, 113, 122, 0.7);
+}
+
+.lightbox-spinner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-top-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.lightbox-img {
+    transition: opacity 0.2s ease;
+}

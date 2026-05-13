@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography — CheeOoo's Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="../src/leaf-nature-forest-brand-plant_icon-icons.com_59259.png">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="./css/indexStyle.css">
+    <style>
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: .75rem;
+            border-top: 2px solid rgb(41 41 41);
+        }
+
+        @media (max-width: 767px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .category-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 2px solid rgb(41 41 41);
+            padding: 1.5rem 0;
+            text-decoration: none;
+            color: inherit;
+            min-height: 70vh;
+            transition: background-color 0.2s ease;
+        }
+
+        .category-col:first-child {
+            border-left: 2px solid rgb(41 41 41);
+        }
+
+        .category-col:hover {
+            background-color: rgb(255 255 255 / 0.03);
+        }
+
+        .category-col:hover .category-arrow {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+        .category-index {
+            font-family: "InputMono", UI-Mono;
+            font-size: 0.725rem;
+            text-transform: uppercase;
+            color: rgb(255 255 255 / 0.4);
+            padding: 0 1rem;
+        }
+
+        .category-name {
+            font-family: "NeueHaasUnica", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: rgb(255 255 255);
+            line-height: 130%;
+            padding: 0 1rem;
+        }
+
+        .category-arrow {
+            font-family: "InputMono", UI-Mono;
+            font-size: 0.725rem;
+            text-transform: uppercase;
+            color: rgb(255 255 255 / 0.4);
+            padding: 0 1rem;
+            opacity: 0;
+            transform: translateX(0);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w-full flex items-center flex-col">
+        <div class="margin max-w-8xl w-full">
+            <nav class="nav border-b-2 border-secondary-color grid-layout py-4">
+                <h1 class="font-NeueHaas text-15 font-medium text-text-color col-span-4 col-start-1 hover:text-violet-300 txt">
+                    <a href="index.html">Marcus Haugstrup</a>
+                </h1>
+                <h1 class="font-NeueHaas text-15 font-medium text-text-color col-span-6 md:col-start-7 lg:col-start-7 md:col-span-3 lg:col-span-2 txt">
+                    Photography
+                </h1>
+                <h1 class="font-NeueHaas text-15 font-medium text-text-color col-span-3 lg:inline md:col-start-9 txt">
+                    Billund, Denmark
+                </h1>
+            </nav>
+
+            <main>
+                <section class="w-full grid grid-cols-12 grid-gap relative max-w-8xl">
+                    <section class="my-6 grid-layout">
+                        <div class="flex flex-col font-NeueHaas text-15 font-medium col-span-4 col-start-1 col-end-13 gap-3 md:col-end-5 txt">
+                            <p class="text-white opacity-40 font-InputMono caption">browse</p>
+                            <h1 class="font-NeueHaas text-15 font-medium text-text-color col-start-1 col-end-13 mb-4 md:col-start-1 md:col-span-5 md:mb-0 txt">
+                                Select a category to browse the full collection.
+                            </h1>
+                        </div>
+                    </section>
+
+                    <div class="col-start-1 col-end-13">
+                        <div class="category-grid">
+
+                            <a href="gallery.html?tag=Car" class="category-col">
+                                <span class="category-index">01</span>
+                                <span class="category-name">Cars</span>
+                                <span class="category-arrow">→ View</span>
+                            </a>
+
+                            <a href="gallery.html?tag=Travel" class="category-col">
+                                <span class="category-index">02</span>
+                                <span class="category-name">Travel</span>
+                                <span class="category-arrow">→ View</span>
+                            </a>
+
+                            <a href="gallery.html?tag=Family" class="category-col">
+                                <span class="category-index">03</span>
+                                <span class="category-name">Family</span>
+                                <span class="category-arrow">→ View</span>
+                            </a>
+
+                            <a href="gallery.html?tag=Graphic+Design" class="category-col">
+                                <span class="category-index">04</span>
+                                <span class="category-name">Graphic Design</span>
+                                <span class="category-arrow">→ View</span>
+                            </a>
+
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
