@@ -11,7 +11,7 @@
     <style>
         .two-col-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             column-gap: .75rem;
             row-gap: 0;
         }
@@ -47,10 +47,12 @@
     <div class="w-full flex items-center flex-col">
         <div class="margin max-w-8xl w-full">
             <nav class="nav border-b-2 border-secondary-color grid-layout py-4">
-                <h1 class="font-NeueHaas text-15 font-medium text-text-color col-span-4 col-start-1 hover:text-violet-300 txt">
+                <h1
+                    class="font-NeueHaas text-15 font-medium text-text-color col-span-4 col-start-1 hover:text-violet-300 txt">
                     <a href="index.html">Marcus Haugstrup</a>
                 </h1>
-                <h1 id="nav-tag" class="font-NeueHaas text-15 font-medium text-text-color col-span-6 md:col-start-7 lg:col-start-7 md:col-span-3 lg:col-span-2 txt">
+                <h1 id="nav-tag"
+                    class="font-NeueHaas text-15 font-medium text-text-color col-span-6 md:col-start-7 lg:col-start-7 md:col-span-3 lg:col-span-2 txt">
                     Gallery
                 </h1>
                 <h1 class="font-NeueHaas text-15 font-medium text-text-color col-span-3 lg:inline md:col-start-9 txt">
@@ -61,11 +63,13 @@
             <main>
                 <section class="w-full grid grid-cols-12 grid-gap relative max-w-8xl">
                     <section class="my-6 grid-layout">
-                        <div class="flex flex-col font-NeueHaas text-15 font-medium col-span-4 col-start-1 col-end-13 gap-3 md:col-end-5 txt">
+                        <div
+                            class="flex flex-col font-NeueHaas text-15 font-medium col-span-4 col-start-1 col-end-13 gap-3 md:col-end-5 txt">
                             <p class="text-white opacity-40 font-InputMono caption">
                                 <a href="photography.html" class="back-link">← Back</a>
                             </p>
-                            <h1 id="page-title" class="font-NeueHaas text-15 font-medium text-text-color col-start-1 col-end-13 mb-4 md:col-start-1 md:col-span-5 md:mb-0 txt">
+                            <h1 id="page-title"
+                                class="font-NeueHaas text-15 font-medium text-text-color col-start-1 col-end-13 mb-4 md:col-start-1 md:col-span-5 md:mb-0 txt">
                                 Loading...
                             </h1>
                         </div>
@@ -75,19 +79,40 @@
                         <div class="two-col-grid">
                             <div id="col-1" class="gallery-col"></div>
                             <div id="col-2" class="gallery-col"></div>
+                            <div id="col-3" class="gallery-col"></div>
                         </div>
                     </div>
                 </section>
             </main>
         </div>
     </div>
+    <div class="lightbox-overlay" id="lightbox">
+        <button class="lightbox-btn lightbox-close" id="lb-close">✕ Close</button>
+        <button class="lightbox-btn lightbox-download" id="lb-download">↓ Download</button>
+        <button class="lightbox-btn lightbox-prev" id="lb-prev">← Prev</button>
+        <button class="lightbox-btn lightbox-next" id="lb-next">Next →</button>
+        <img class="lightbox-img" id="lb-img" src="" alt="">
+        <div class="lightbox-spinner" id="lb-spinner"></div>
+        <div class="lightbox-caption">
+            <h1 id="lb-caption"></h1>
+            <p id="lb-location"></p>
+        </div>
+        <span class="lightbox-counter" id="lb-counter"></span>
+    </div>
 
     <script>
+        let allImages = [];
+        let currentIndex = 0;
+
+        function cloudinaryUrl(publicId, width = null) {
+            const transform = width ? `w_${width},f_auto,q_auto` : `f_auto,q_auto`;
+            return `https://res.cloudinary.com/dib9lpyjw/image/upload/${transform}/${publicId}`;
+        }
+
         async function loadGallery() {
             const params = new URLSearchParams(window.location.search);
             const tag = params.get("tag") || "";
 
-            // Update page title and nav
             document.getElementById("page-title").textContent = tag || "Gallery";
             document.getElementById("nav-tag").textContent = tag || "Gallery";
             document.title = `${tag} — CheeOoo's Portfolio`;
@@ -95,7 +120,6 @@
             const response = await fetch("photos.json");
             const data = await response.json();
 
-            // Filter to matching tag only
             const filtered = data.filter(item => item.Tag === tag);
 
             if (filtered.length === 0) {
@@ -104,38 +128,113 @@
                 return;
             }
 
-            // Distribute into 2 columns, preserving reverse order
             const col1 = document.getElementById("col-1");
             const col2 = document.getElementById("col-2");
+            const col3 = document.getElementById("col-3");
 
             for (let i = filtered.length - 1; i >= 0; i--) {
                 const item = filtered[i];
-                const targetCol = i % 2 === 0 ? col1 : col2;
+                const position = (filtered.length - 1 - i) % 3;
+               const targetCol = position === 0 ? col1 : position === 1 ? col2 : col3;
+const locationYear = [item.Location, item.Year].filter(Boolean).join(", ");
 
-                const locationYear = [item.Location, item.Year].filter(Boolean).join(", ");
+                const idx = allImages.length;
+                allImages.push(item);
 
                 const card = `
-                    <a target="_blank" rel="noopener noreferrer"
-                       class="cursor-pointer relative grid w-full opacity-100 select-none group">
-                        <div class="relative game-border group-hover:opacity-80">
-                            <div class="relative w-full overflow-hidden">
-                                <article class="overflow-hidden relative w-full">
-                                    <img loading="lazy" alt="${item.Caption} — ${item.Location}, ${item.Year}"
-                                         sizes="100vw" src="${item.Url}"
-                                         style="width:100%; height:100%; object-fit:cover; object-position:center;">
-                                </article>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <h1 class="font-InputMono caption text-zinc-50">${item.Caption}</h1>
-                            <p class="font-InputMono caption text-zinc-500">${locationYear}</p>
-                        </div>
-                    </a>
-                `;
+        <a data-lightbox="${idx}"
+           class="cursor-pointer relative grid w-full opacity-100 select-none group">
+            <div class="relative game-border group-hover:opacity-80">
+                <div class="relative w-full overflow-hidden">
+                    <article class="overflow-hidden relative w-full">
+                        <img loading="lazy" alt="${item.Caption} — ${item.Location}, ${item.Year}"
+                             sizes="100vw" src="${cloudinaryUrl(item.Url, 800)}"
+                             style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                    </article>
+                </div>
+            </div>
+            <div class="mt-3">
+                <h1 class="font-InputMono caption text-zinc-50">${item.Caption}</h1>
+                <p class="font-InputMono caption text-zinc-500">${locationYear}</p>
+            </div>
+        </a>
+    `;
 
                 targetCol.insertAdjacentHTML("beforeend", card);
             }
+
+            bindLightboxClicks();
         }
+
+        function openLightbox(index) {
+            currentIndex = index;
+            const item = allImages[currentIndex];
+
+            const img = document.getElementById("lb-img");
+            const spinner = document.getElementById("lb-spinner");
+
+            img.style.opacity = "0";
+            spinner.style.display = "block";
+
+            img.onload = () => {
+                img.style.opacity = "1";
+                spinner.style.display = "none";
+            };
+
+            img.src = cloudinaryUrl(item.Url);
+            img.alt = item.Caption;
+            document.getElementById("lb-caption").textContent = item.Caption;
+            document.getElementById("lb-location").textContent = [item.Location, item.Year].filter(Boolean).join(", ");
+            document.getElementById("lb-counter").textContent = `${currentIndex + 1} / ${allImages.length}`;
+            document.getElementById("lightbox").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.remove("active");
+            document.getElementById("lb-img").src = "";
+            document.body.style.overflow = "";
+        }
+
+        function navigate(dir) {
+            currentIndex = (currentIndex + dir + allImages.length) % allImages.length;
+            openLightbox(currentIndex);
+        }
+
+        function downloadCurrent() {
+            const item = allImages[currentIndex];
+            const a = document.createElement("a");
+            a.href = cloudinaryUrl(item.Url);
+            a.download = item.Caption || "photo";
+            a.target = "_blank";
+            a.click();
+        }
+
+        function bindLightboxClicks() {
+            document.querySelectorAll("[data-lightbox]").forEach(el => {
+                el.addEventListener("click", e => {
+                    e.preventDefault();
+                    openLightbox(parseInt(el.dataset.lightbox));
+                });
+            });
+        }
+
+        document.getElementById("lb-close").addEventListener("click", closeLightbox);
+        document.getElementById("lb-prev").addEventListener("click", () => navigate(-1));
+        document.getElementById("lb-next").addEventListener("click", () => navigate(1));
+        document.getElementById("lb-download").addEventListener("click", downloadCurrent);
+
+        document.getElementById("lightbox").addEventListener("click", e => {
+            if (e.target === document.getElementById("lightbox")) closeLightbox();
+        });
+
+        document.addEventListener("keydown", e => {
+            const lb = document.getElementById("lightbox");
+            if (!lb.classList.contains("active")) return;
+            if (e.key === "ArrowLeft") navigate(-1);
+            if (e.key === "ArrowRight") navigate(1);
+            if (e.key === "Escape") closeLightbox();
+        });
 
         loadGallery();
     </script>
