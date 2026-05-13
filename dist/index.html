@@ -38,7 +38,7 @@
                                 skills across these diverse fields.
                                 <br> <br>
                                 If you're interested in more of my work, you can find it <a href="photography.html"
-                                    style="color: rgb(147 167 155);">here</a>
+                                    style="color: rgb(196 181 253);">here</a> 
                         </div>
                         <div class="grid grid-cols-6 col-start-1 col-end-13 gap-3 md:col-start-7">
                             <p class="text-white opacity-40 font-InputMono col-start-1 caption">Work</p>
@@ -120,9 +120,10 @@
         async function loadCards() {
             const response = await fetch("photos.json");
             const data = await response.json();
+            const filtered = data.filter(item => item.Tag !== "Graphics");
 
-            for (let i = data.length - 1; i >= 0; i--) {
-                const item = data[i];
+            for (let i = filtered.length - 1; i >= 0; i--) {
+                const item = filtered[i];
                 const column = document.getElementById(`col-${item.Column}`);
                 if (!column) continue;
 
