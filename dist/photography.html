@@ -16,11 +16,6 @@
             border-bottom: 2px solid rgb(41 41 41);
         }
 
-        @media (max-width: 767px) {
-            .category-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
 
         .category-col {
             display: flex;
@@ -56,23 +51,26 @@
         }
 
         .category-col:nth-child(1)::before {
-           background: url(https://res.cloudinary.com/dib9lpyjw/image/upload/q_auto:eco/f_auto,o_100/v1775160482/3_fxiyh4.jpg);
-           background-size: auto 100%;
+            background: url(https://res.cloudinary.com/dib9lpyjw/image/upload/q_auto:eco/f_auto,o_100/v1775160482/3_fxiyh4.jpg);
+            background-size: auto 100%;
             background-position: center;
         }
+
         .category-col:nth-child(2)::before {
-           background: url(https://res.cloudinary.com/dib9lpyjw/image/upload/q_auto:eco/f_auto,o_100/v1775160482/IMG_9705-1_v9xkr0.jpg);
-           background-size: auto 100%;
+            background: url(https://res.cloudinary.com/dib9lpyjw/image/upload/q_auto:eco/f_auto,o_100/v1775160482/IMG_9705-1_v9xkr0.jpg);
+            background-size: auto 100%;
             background-position: center;
         }
+
         .category-col:nth-child(3)::before {
-           background: url(https://res.cloudinary.com/dib9lpyjw/image/upload/q_auto:eco/f_auto/v1775160851/20230311-IMG_4418_infzza.jpg);
-           background-size: auto 100%;
+            background: url(https://res.cloudinary.com/dib9lpyjw/image/upload/q_auto:eco/f_auto/v1775160851/20230311-IMG_4418_infzza.jpg);
+            background-size: auto 100%;
             background-position: center;
         }
+
         .category-col:nth-child(4)::before {
-           background: url(https://res.cloudinary.com/dib9lpyjw/image/upload/q_auto:eco/f_auto/v1778669619/teeth_mqlfcm.png);
-           background-size: auto 100%;
+            background: url(https://res.cloudinary.com/dib9lpyjw/image/upload/q_auto:eco/f_auto/v1778669619/teeth_mqlfcm.png);
+            background-size: auto 100%;
             background-position: center;
         }
 
@@ -121,22 +119,54 @@
             transform: translateX(0);
             transition: opacity 0.2s ease, transform 0.2s ease;
         }
+
+        @media (max-width: 767px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #nav-name {
+                grid-column-end: 6;
+            }
+
+
+            .category-col {
+                min-height: 30vh;
+            }
+
+            #nav-tag {
+                grid-column-start: 7;
+            }
+        }
+
+        @media (max-width:1023px) {
+            #navbar-location {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1776px) {
+            #page-container {
+                max-width: 97vw;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="w-full flex items-center flex-col">
-        <div class="margin max-w-8xl w-full">
-            <nav class="nav border-b-2 border-secondary-color grid-layout py-4">
-                <h1
+        <div id="page-container" class="margin max-w-8xl w-full">
+            <nav id="navbar" class="nav border-b-2 border-secondary-color grid-layout py-4">
+                <h1 id="nav-name"
                     class="font-NeueHaas text-15 font-medium text-text-color col-span-4 col-start-1 hover:text-violet-300 txt">
                     <a href="index.html">Marcus Haugstrup</a>
                 </h1>
-                <h1
-                    class="font-NeueHaas text-15 font-medium text-text-color col-span-6 md:col-start-7 lg:col-start-7 md:col-span-3 lg:col-span-2 txt">
+                <h1 id="nav-tag"
+                    class="font-NeueHaas text-15 font-medium text-text-color col-span-6 md:col-start-7 lg:col-start-7 md:col-span-4 lg:col-span-2 txt">
                     Photography
                 </h1>
-                <h1 class="font-NeueHaas text-15 font-medium text-text-color col-span-3 lg:inline md:col-start-9 txt">
+                <h1 id="navbar-location"
+                    class="font-NeueHaas text-15 font-medium text-text-color col-span-3 lg:inline md:col-start-9 txt">
                     Billund, Denmark
                 </h1>
             </nav>
@@ -145,10 +175,10 @@
                 <section class="w-full grid grid-cols-12 grid-gap relative max-w-8xl">
                     <section class="my-6 grid-layout">
                         <div
-                            class="flex flex-col font-NeueHaas text-15 font-medium col-span-4 col-start-1 col-end-13 gap-3 md:col-end-5 txt">
+                            class="flex flex-col font-NeueHaas text-15 font-medium col-span-4 col-start-1 col-end-13 gap-3 md:col-end-6 txt">
                             <p class="text-white opacity-40 font-InputMono caption">browse</p>
                             <h1
-                                class="font-NeueHaas text-15 font-medium text-text-color col-start-1 col-end-13 mb-4 md:col-start-1 md:col-span-5 md:mb-0 txt">
+                                class="font-NeueHaas text-15 font-medium text-text-color col-start-1 col-end-13 mb-4 md:col-start-1 md:mb-0 txt">
                                 Select a category to browse the full collection.
                             </h1>
                         </div>

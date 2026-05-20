@@ -6,6 +6,7 @@ body {
     background-color: #111111;
 }
 
+
 .txt {
     line-height: 130%;
 }
@@ -137,9 +138,68 @@ body {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .lightbox-img {
     transition: opacity 0.2s ease;
+}
+
+#footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: 2px solid rgb(41, 41, 41);
+    margin-top: 10vh;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* MOBILE USE */
+@media (max-width: 767px) {
+    #nav-tag {
+        grid-column-start: 7;
+    }
+
+    #nav-name {
+        grid-column-end: 6;
+    }
+
+    #footer-find-me {
+        display: none;
+    }
+
+    .footer-link-text {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1023px) {
+    #navbar-location {
+        display: none;
+    }
+
+    .about-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1776px) {
+     #page-container {
+        max-width: 97vw;
+    }
 }
