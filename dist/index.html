@@ -7,7 +7,8 @@
 
     <meta property="og:title" content="The Archive - Marcus Haugstrup">
     <meta property="og:description" content="Photography, design, web, and music. All in one portfolio.">
-    <meta property="og:image" content="https://res.cloudinary.com/dib9lpyjw/image/upload/c_auto,g_south,h_630,w_1200/l_sigwh_rhjv4w/c_scale,fl_relative,w_0.25/fl_layer_apply,fl_no_overflow,g_south_east,x_30,y_30/16_canvu7.jpg">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/dib9lpyjw/image/upload/c_auto,g_south,h_630,w_1200/l_sigwh_rhjv4w/c_scale,fl_relative,w_0.25/fl_layer_apply,fl_no_overflow,g_south_east,x_30,y_30/16_canvu7.jpg">
     <meta property="og:url" content="https://cheeooo.github.io/portfolio">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -122,6 +123,14 @@
         </div>
         <span class="lightbox-counter" id="lb-counter"></span>
     </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
 
     <script>
         let allImages = [];
@@ -247,6 +256,16 @@
         });
 
         loadCards();
+
+        const btn = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+            btn.classList.toggle("visible", window.scrollY > 400);
+        });
+
+        btn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     </script>
 
     <footer class="border-t-2 border-secondary-color grid-layout py-6 mt-12" id="footer">

@@ -169,6 +169,35 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.6);
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#back-to-top:hover {
+    color: rgb(196 181 253);
+    border-color: rgb(196 181 253);
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
 /* MOBILE USE */
 @media (max-width: 767px) {
     #nav-tag {
