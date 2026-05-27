@@ -179,13 +179,14 @@ body {
     background: transparent;
     border: 1px solid rgba(255,255,255,0.6);
     color: rgba(255,255,255,0.6);
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    z-index: 999;
 }
 
 #back-to-top:hover {
@@ -224,6 +225,12 @@ body {
 
     .about-text {
         font-size: 13px;
+    }
+}
+
+@media (max-width: 1279px) {
+    #back-to-top {
+        display: none;
     }
 }
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery — CheeOoo's Portfolio</title>
+    <title>The Archive — Gallery</title>
     <link rel="icon" type="image/x-icon" href="../src/leaf-nature-forest-brand-plant_icon-icons.com_59259.png">
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="./css/indexStyle.css">
@@ -115,7 +115,7 @@
 
             document.getElementById("page-title").textContent = tag || "Gallery";
             document.getElementById("nav-tag").textContent = tag || "Gallery";
-            document.title = `${tag} — CheeOoo's Portfolio`;
+            document.title = `The Archive — ${tag}`;
 
             const response = await fetch("photos.json");
             const data = await response.json();
